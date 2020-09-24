@@ -42,8 +42,8 @@ stringstyle=\color{mymauve},     % string literal style
 
 \begin{document}
 
-
-
+\tableofcontents
+\newpage
 \section{Content of the electronics kit}  
 
 You borrow your kit personally from FlexLab and it must be handed back to
@@ -70,6 +70,7 @@ have lost something or something is defective.
   \item resistor
   \item RGB LED
 \end{todolist}
+\newpage
 
 %\section{about the Esp32 microcontroller}  
 
@@ -131,5 +132,34 @@ See example below:
 
 
 \lstinputlisting{code_examples/lecture_2/pwm_led.cpp}
+
+\section{I2C}
+
+\subsection{Scanning for I2C devices}
+
+Before we start I connect our three I2C devices to the ESP32 
+
+\begin{center}
+  \includegraphics[width=12cm, keepaspectratio]{fritzing/i2c_devices.png}
+\end{center}
+
+You can use this code to find I2C devices connected to your microsontroller.
+
+\lstinputlisting{code_examples/lecture_3/i2c_scaning.cpp}
+
+In this case I have connected a LCD display, a small OLED display and an accelerometer.
+
+\begin{lstlisting}
+  Scanning...
+  I2C device found at address 0x27
+  I2C device found at address 0x3C
+  I2C device found at address 0x68
+  done
+\end{lstlisting}
+
+\subsection{Accelerometer (MPU6050)}
+
+\lstinputlisting{code_examples/lecture_3/mpu6050_accelerometer.cpp}
+
 
 \end{document}
